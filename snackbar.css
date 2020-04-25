@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.snackbar {
+	padding-left: 0px;
+	padding-right: 0px;
+	position: fixed;
+	width: 150px;
+	height: 45px;
+	background:  white;
+	line-height: 45px;
+	text-align: center;
+	border-radius: 2px;
+	bottom: 15px;
+	left: 15px;
+	display: none;
+	white-space: nowrap;
+}
+
+.snackbar-message {
+	color: black;
+	font-family: 'Kanit', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	user-select: none;
+	display: inline-block;
+}
+
+.snackbar-option {
+	color: #EFFC0A;
+	font-family: Roboto;
+	font-weight: 300;
+	font-size: 13px;
+	padding-left: 25px;
+	cursor: pointer;
+	user-select: none;
+}
