@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random</title>
+	
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="random.css">
+	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./snackbar.css">
+	<link rel="stylesheet" href="./jquery-ui.css">
+</head>
+<body>
+	<div class="wrapper">
+		<button id="color-code" class="colCode"type="button" onclick="copyCode()">#000000</button>
+		<button type="button" id="randomclick">RANDOMIZE</button>
+	</div>
+
+	<script type="text/javascript">
+		var btn = document.getElementById('randomclick');
+		var cBtn = document.getElementById('copy');
+		var code = document.getElementById('color-code');		
+
+		function copyCode() {
+			var temp = document.createElement("textarea");
+			document.body.appendChild(temp);
+			temp.value= code.innerText;
+			temp.select();
+			document.execCommand("copy");
+			document.body.removeChild(temp);
+			$("body").snackbar({
+			    message: "Copied to Clipboard",
+			    primary:  document.body.style.background
+			});
+    
+			    
+		}
+
+		var generator = function() {
+			newColour = '#' + (Math.random()*0xFFFFFF<<0).toString(16);
+			console.log(newColour.length);
+			if(newColour.length < 7) {
+				generator();
+
+			}
+		}
+
+		btn.addEventListener('click', function() {
+			generator();
+			document.body.style.background = newColour;
+			btn.style.color = newColour;
+			newColour = newColour.toUpperCase();
+			code.style.backgroundColor = newColour;
+			code.innerText = newColour;
+		})
+
+	</script>
+	<script src="./jquery.min.js"></script>
+	<script src="./jquery-ui.min.js"></script>
+	<script src="./snackbar.js"></script>
+	<script src="./script.js"></script>
+	
+
+</body>
+</html>
