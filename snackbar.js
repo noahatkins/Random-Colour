@@ -12,7 +12,7 @@ $.fn.snackbar = function(args) {
     // Options
     var primary,
         accent,
-        duration = 1,
+        duration = 0.4,
         message = "This is a snackbar. (snackbar.js)",
         option = false,
         optionText = "UNDO",

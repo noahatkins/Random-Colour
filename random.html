@@ -8,15 +8,22 @@
 	<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./snackbar.css">
 	<link rel="stylesheet" href="./jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css">
 </head>
 <body>
+	<div class="logos">
+		<div class="burger"><a href="https://www.buymeacoffee.com/noahatkins"  target ="_blank"><i class="fas fa-hamburger" id="burger-p"></i></a></div>
+		<div class="burger"><a href="https://github.com/noahatkins"  target ="_blank"><i class="fab fa-github" id="github-p"></i></a></div>
+	</div>
+	
+	
 	<h1>
- 		<a  class="typewrite" data-period="2000" data-type='[ "HUE CLUE", "RANDOM SHADES", "CLICK TO COPY" ]'>
+ 		<a  class="typewrite" data-period="2000" data-type='[ "HUE CLUE", "RANDOM SHADES", "CLICK CODE TO COPY" ]'>
     		<span class="wrap"></span>
  	 	</a>
 	</h1>
 	<div class="wrapper">
-		<button id="color-code" class="colCode"type="button" onclick="copyCode()">#000000</button>
+		<button id="color-code" class="colCode"type="button" onclick="copyCode()" onmousedown="sound.play()">#000000</button>
 		<button type="button" id="randomclick">RANDOMIZE</button>
 	</div>
 
@@ -24,7 +31,8 @@
 		var btn = document.getElementById('randomclick');
 		var cBtn = document.getElementById('copy');
 		var code = document.getElementById('color-code');		
-
+		var burger = document.getElementById('burger-p');
+		var github = document.getElementById('github-p');
 		function copyCode() {
 			var temp = document.createElement("textarea");
 			document.body.appendChild(temp);
@@ -33,7 +41,7 @@
 			document.execCommand("copy");
 			document.body.removeChild(temp);
 			$("body").snackbar({
-			    message: "Copied to Clipboard",
+			    message: "COPIED TO CLIPBOARD",
 			    primary:  document.body.style.background
 			});
     
@@ -53,8 +61,11 @@
 			generator();
 			document.body.style.background = newColour;
 			btn.style.color = newColour;
+			burger.style.color = newColour;
+			github.style.color = newColour;
+
 			newColour = newColour.toUpperCase();
-			code.style.backgroundColor = newColour;
+
 			code.innerText = newColour;
 		})
 
