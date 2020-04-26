@@ -1,2 +1,2 @@
 var sound = new Audio();
-sound.src = "button.mp3"
+sound.src = "./Misc/button.mp3"
