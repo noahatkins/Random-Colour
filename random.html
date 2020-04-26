@@ -44,17 +44,13 @@
 			$("body").snackbar({
 			    message: "COPIED TO CLIPBOARD",
 			    primary:  document.body.style.background
-			});
-    
-			    
+			});	    
 		}
 
 		var generator = function() {
 			newColour = '#' + (Math.random()*0xFFFFFF<<0).toString(16);
-			console.log(newColour.length);
 			if(newColour.length < 7) {
 				generator();
-
 			}
 		}
 
@@ -64,17 +60,15 @@
 			btn.style.color = newColour;
 			burger.style.color = newColour;
 			github.style.color = newColour;
-
 			newColour = newColour.toUpperCase();
-
 			code.innerText = newColour;
 		})
 
 	</script>
-	<script src="./jquery.min.js"></script>
-	<script src="./jquery-ui.min.js"></script>
-	<script src="./snackbar.js"></script>
-	<script src="./script.js"></script>
+	<script src="./Scripts/jquery.min.js"></script>
+	<script src="./Scripts/jquery-ui.min.js"></script>
+	<script src="./Scripts/snackbar.js"></script>
+	<script src="./Scripts/script.js"></script>
 	
 
 </body>
